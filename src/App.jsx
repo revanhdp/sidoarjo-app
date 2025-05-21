@@ -4,16 +4,17 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import LandingPage from './pages/LandingPage'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Recipe from './pages/Recipe'
 
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>
     <Router>
       <Routes>
         <Route path='/' element={<LandingPage/>} />
+        <Route path='/recipe' element={<Recipe/>} />
       </Routes>
     </Router>
     </>

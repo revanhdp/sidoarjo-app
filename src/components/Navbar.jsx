@@ -28,10 +28,7 @@ export default function Navbar(){
                 <div>
                     <ul className={`flex-col md:flex-row md:flex gap-10 text-white text-lg items-center absolute md:static top-14 left-0 w-full md:w-auto bg-[#093526] md:bg-transparent md:space-x-8 transition-all duration-300 ease-in-out ${isOpen ? 'flex' : 'hidden'} `}>
 
-                        {/* <li className={`py-2 px-4 hover:text-green-300 border-b-2 pb-1 ${location.pathname === "/" ? "border-white" : "border-transparent"}`}>Home</li> */}
-                        {/* <li className={`py-2 px-4 hover:text-green-300 border-b-2 pb-1 ${location.pathname === "/article" ? "border-white" : "border-transparent"}`}>Artice</li>
-                        <li className={`py-2 px-4 hover:text-green-300 border-b-2 pb-1 ${location.pathname === "/market" ? "border-white" : "border-transparent"}`}>Marketplace</li>
-                        <li className={`py-2 px-4 hover:text-green-300 border-b-2 pb-1 ${location.pathname === "/recipes" ? "border-white" : "border-transparent"}`}>Recipes</li> */}
+
                         <Link to="/" className={`py-2  text-white hover:text-green-300 border-b-2 px-0 pb-1 ${location.pathname === "/" ? "border-white" : "border-transparent"}`}>
                             Home
                         </Link>
@@ -41,7 +38,7 @@ export default function Navbar(){
                         <Link to="/article" className={`py-2 px-0 text-white hover:text-green-300 border-b-2 pb-1 ${location.pathname === "/market" ? "border-white" : "border-transparent"}`}>
                             Marketplace
                         </Link>
-                        <Link to="/article" className={`py-2 px-0 text-white hover:text-green-300 border-b-2 pb-1 ${location.pathname === "/recipes" ? "border-white" : "border-transparent"}`}>
+                        <Link to="/recipe" className={`py-2 px-0 text-white hover:text-green-300 border-b-2 pb-1 ${location.pathname === "/recipe" ? "border-white" : "border-transparent"}`}>
                             Recipes
                         </Link>
                     </ul>
