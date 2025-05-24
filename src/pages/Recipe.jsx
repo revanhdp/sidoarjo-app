@@ -68,7 +68,7 @@ export default function Recipe(){
                 </section>
 
                 {/* Section 4 - Trending Recipes*/}
-                <section className="container mx-auto w-full mt-20">
+                <section className="container mx-auto w-full mt-20 pb-20">
                     <p className="text-slate-800 text-2xl font-bold">Trending Recipes</p>
                     <div className="flex gap-3 flex-row flex-wrap md:flex-nowrap mt-6">
                         {[1, 2, 3].map((x) => (

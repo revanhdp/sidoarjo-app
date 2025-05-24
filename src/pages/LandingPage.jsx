@@ -152,7 +152,7 @@ export default function LandingPage(){
 
 
                     {/* Section 6 - Testimonial */}
-                    <section className="container mx-auto mt-20 ">
+                    <section className="container mx-auto mt-20 pb-20">
                         <div className="flex flex-col justify-center items-center w-full gap-5">
                             <p className="text-slate-900 text-3xl md:text-5xl text-center ">What they say</p>
                             <p className="font-light text-base sm:text-lg md:text-xl text-slate-900">Hear how our community embraces wellness the local way</p>
@@ -162,7 +162,7 @@ export default function LandingPage(){
                                 <div key={x} className="p-4 flex flex-col gap-4 border w-full sm:w-[calc(50%-0.875rem)] md:w-[calc(33.333%-0.875rem)]">
                                     <p className="text-slate-800">"Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam beatae, vitae illo voluptatem nesciunt, ipsam incidunt quae explicabo molestias modi, earum eaque quaerat dignissimos reprehenderit deserunt minima magnam tenetur repudiandae."</p>
                                     <div className="flex items-center gap-2 ">
-                                        <img src={devPic} className="w-24 rounded-full" alt="" />
+                                        <img src="../public/assets/user-circle.svg" className="w-14 rounded-full" alt="" />
                                         <p className="text-slate-800">Benny</p>
                                     </div>
                                 </div>

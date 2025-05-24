@@ -27,15 +27,13 @@ export default function Navbar(){
                 {/* Mid */}
                 <div>
                     <ul className={`flex-col md:flex-row md:flex gap-10 text-white text-lg items-center absolute md:static top-14 left-0 w-full md:w-auto bg-[#093526] md:bg-transparent md:space-x-8 transition-all duration-300 ease-in-out ${isOpen ? 'flex' : 'hidden'} `}>
-
-
                         <Link to="/" className={`py-2  text-white hover:text-green-300 border-b-2 px-0 pb-1 ${location.pathname === "/" ? "border-white" : "border-transparent"}`}>
                             Home
                         </Link>
                         <Link to="/article" className={`py-2 px-0 text-white hover:text-green-300  border-b-2 pb-1 ${location.pathname === "/article" ? "border-white" : "border-transparent"}`}>
                             Article
                         </Link>
-                        <Link to="/article" className={`py-2 px-0 text-white hover:text-green-300 border-b-2 pb-1 ${location.pathname === "/market" ? "border-white" : "border-transparent"}`}>
+                        <Link to="/marketplace" className={`py-2 px-0 text-white hover:text-green-300 border-b-2 pb-1 ${location.pathname === "/marketplace" ? "border-white" : "border-transparent"}`}>
                             Marketplace
                         </Link>
                         <Link to="/recipe" className={`py-2 px-0 text-white hover:text-green-300 border-b-2 pb-1 ${location.pathname === "/recipe" ? "border-white" : "border-transparent"}`}>
