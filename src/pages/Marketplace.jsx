@@ -21,7 +21,7 @@ export default function Marketplace(){
         {
             title: "Jamu Kunyit asam",
             harga: 275000,
-            img: "../public/assets/batik.jpg"
+            img: "../public/assets/bg_recipe.png"
         },
         {
             title: "Jamu Kunyit asam",
@@ -102,15 +102,15 @@ export default function Marketplace(){
 
                 <section className="container flex mx-auto w-full gap-10 mt-5 flex-wrap justify-center">
                     {objek.map((obj) =>
-                        <div key={obj.id} className="w-[20%] min-h-5 flex flex-col rounded-lg relative">
+                        <div key={obj.id} className="w-[20%] min-h-5 flex flex-col rounded-lg relative ">
                             <div className="absolute right-0 top-0">
                                 <svg fill="#000000" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" stroke="#ffffff"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M20.808,11.079C19.829,16.132,12,20.5,12,20.5s-7.829-4.368-8.808-9.421C2.227,6.1,5.066,3.5,8,3.5a4.444,4.444,0,0,1,4,2,4.444,4.444,0,0,1,4-2C18.934,3.5,21.773,6.1,20.808,11.079Z"></path></g></svg>
                             </div>
                             <div className="bg-[#FFEFDE] rounded-lg">
-                                <img src={obj.img} className="h-64 p-6 rounded-lg" alt="" /> 
+                                <img src={obj.img} className="h-64 p-6 rounded-lg object-cover" alt="" /> 
                             </div>  
                             <div className="">
-                                <p className="text-slate-600">Rp.{obj.harga}</p>
+                                <p className="text-slate-600 text-sm">Rp.{obj.harga}</p>
                                 <p className="text-slate-600 font-bold">{obj.title}</p>
                             </div>
 
