@@ -15,19 +15,19 @@ export default function Login(){
                     <form className="w-2/3 flex flex-col gap-4">
                         <div className="flex flex-col">
                             <label htmlFor="email" className="text-slate-800">Email</label>
-                            <input type="text" className="py-2 pl-1 rounded-md bg-white border text-slate-800" />
+                            <input type="text" className="py-2 pl-1 rounded-md bg-white border text-slate-800 border-slate-400" />
                         </div>
                         <div className="flex flex-col ">
                             <div className="flex justify-between">
                                 <label htmlFor="password" className="text-slate-800">Password</label>
                                 <a href="">Forgot your Password?</a>
                             </div>
-                            <input type="text" className="py-2 pl-1 rounded-md bg-white border text-slate-800" />
+                            <input type="text" className="py-2 pl-1 rounded-md bg-white border text-slate-800 border-slate-400" />
                         </div>
                         <button className="bg-[#0C4834] hover:bg-[#789A48] transition-all">Log In</button>
                     </form>
                     
-                    <Link to={'/'} className="text-slate-700">Dont have Account? <span className="underline text-blue-500">Sign Up</span></Link>
+                    <p className="text-slate-700">Dont have Account? <Link to='/register'>Sign Up</Link></p>
                 </div>
 
                 {/* Right Section */}
