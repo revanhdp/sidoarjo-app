@@ -1,5 +1,6 @@
 import { Bookmark, CakeSliceIcon, Calendar, ChefHat, MessageSquareMore, Printer, Star } from "lucide-react";
 import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 
 export default function RecipeDetail(){
     return(
@@ -43,7 +44,7 @@ export default function RecipeDetail(){
                     </section>
                         {/* Section 2 */}
                     <section className="flex mt-10 gap-6">
-                        <div className="w-2/3 text-slate-700">
+                        <section className="w-2/3 text-slate-700">
                             <div>
                                 <h2 className="font-semibold text-2xl">Overview</h2>
                                 <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Incidunt, iure corporis. In ducimus accusantium modi non neque numquam nisi ullam doloribus corporis deserunt! Fugit quo, impedit non officiis quae dolor.</p>
@@ -87,16 +88,59 @@ export default function RecipeDetail(){
                                 Est quibusdam voluptas fugiat labore fugit saepe modi eum pariatur similique nostrum repellendus sed iusto id possimus, qui tempore impedit ab repellat mollitia! Impedit optio molestias repudiandae incidunt quod? Omnis.</p>
                             </div>
 
+                            <div className="flex gap-3 bg-[#D9E8BD] p-7 ">
+                                <div className="flex self-start">
+                                    <img src="../public/assets/user-circle.svg" className="w-10" alt="" />
+                                </div>
+                                <div className="flex-1 ">
+                                    <p className="font-semibold mb-5">Peringkat Anda</p>
+                                    {/* TAMBAHKAN BINTANG UNTUK KOMEN */}
+                                    <p className="font-semibold">Ulasan Anda:</p>
+                                    <textarea name="" className="w-full bg-white border p-3" placeholder="Bagikan cintamu! Ceritakan kepada kami apa yang kamu pikirkan tentang resepnya dalam ulasan singkat." id=""></textarea> 
+                                    <button className="bg-[#FDDE6C] flex font-semibold justify-self-end mt-5">Posting Ulang</button>
+                                </div>
+                            </div>
 
-                        </div>
-                        <div className="w-1/3 bg-red-400">
+                            <div className="flex flex-col">
+                                {[1,2].map((cmt) => (
+                                    <div className="p-7 flex gap-3 border-b border-slate-300">
+                                        <div className="flex self-start">
+                                            <img src="../public/assets/user-circle.svg" className="w-10" alt="" />
+                                        </div>
+                                        <div className="flex-1 ">
+                                            <p className="font-semibold mb-5">Revan</p>
+                                            {/* TAMBAHKAN BINTANG UNTUK KOMEN */}
+                                            <p className="">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Blanditiis accusamus fugit nihil distinctio unde consequuntur reprehenderit pariatur, sequi quasi impedit illum doloribus cupiditate, vitae odit quis, dolore officia. Blanditiis, officiis.</p>
+                                        </div>
+                                    </div>
+                                ))}
+                            </div>
 
-                        </div>
+                        </section>
+
+                        <section className="w-1/3 h-fit text-slate-700 shadow-lg p-8">
+                            <h2 className="text-xl font-semibold">Related Recipe</h2>
+                            <div className="flex flex-col gap-5">
+                                {[1,2,3,4].map((rr) => (
+                                    <div className="flex gap-5 hover:bg-slate-100 cursor-pointer">
+                                        <div className="w-1/2">
+                                            <img src="../public/assets/hero-article.png" className="w-full h-32 object-cover" alt="" />
+                                        </div>
+                                        <div className="flex flex-col w-1/2 justify-center">
+                                            <p className="font-semibold">Klepon</p>
+                                            {/* TAMBAHKAN BINTANG RATING */}
+                                            <p>20 Mei 2025</p>
+                                        </div>
+                                    </div>
+                                ))}
+                            </div>
+                        </section>
                     </section>
 
                 </div>
                 
 
+            <Footer/>
             </main>
         </>
     )

@@ -1,6 +1,4 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
 import LandingPage from './pages/LandingPage'
 import { BrowserRouter as Router, Routes, Route, BrowserRouter } from 'react-router-dom';
@@ -13,6 +11,8 @@ import Register from './pages/auth/Register'
 import Profile from './pages/user/Profile'
 import Favorite from './pages/user/Favorite'
 import RecipeDetail from './pages/RecipeDetail'
+import RecipeCategories from './pages/RecipeCategories'
+import DetailProduct from './pages/DetailProduct';
 
 
 function App() {
@@ -31,6 +31,8 @@ function App() {
         <Route path='/profile' element={<Profile/>} />
         <Route path='/favorite' element={<Favorite/>} />
         <Route path='/detail-recipe' element={<RecipeDetail/>} />
+        <Route path='/recipe-categories' element={<RecipeCategories/>} />
+        <Route path='/detail-product' element={<DetailProduct/>} />
       </Routes>
     </BrowserRouter>
     </>

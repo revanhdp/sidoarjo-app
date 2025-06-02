@@ -44,7 +44,7 @@ export default function Recipe(){
                     <p className="text-slate-800 text-2xl font-bold">Popular Category</p>
                     <div className="flex justify-center gap-40 mt-8">
                         {[1,2,3,4].map((x) => (
-                            <div key={x} className="flex flex-col gap-3 items-center cursor-pointer" >
+                            <div key={x} className="flex flex-col gap-3 items-center cursor-pointer " >
                                 <img src="../assets/tofu.jpg" className="w-72 object-cover rounded-full border shadow-lg" alt="" />
                                 <p className="text-slate-800">Dessert</p>
                             </div>
@@ -61,7 +61,7 @@ export default function Recipe(){
                         <div className="w-2/3 flex flex-col gap-6">
                             <p className="text-5xl text-slate-700">Delicious, Cultural, and balanced for Modern Living</p>
                             <p className="text-lg text-slate-700">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ducimus vel velit hic amet consequatur sequi sint pariatur. Praesentium voluptates possimus debitis quia modi recusandae in? Architecto amet cumque inventore. Officiis!</p>
-                            <Link to="/recipe" className={`py-2 px-0 text-slate-700 flex gap-3`}>
+                            <Link to="/recipe-categories" className={`py-2 px-0 text-slate-700 flex gap-3`}>
                                 Recipes <ArrowRightIcon/>
                             </Link>
                         </div>
