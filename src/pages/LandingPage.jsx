@@ -1,4 +1,5 @@
 import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 import { ShoppingCart } from "lucide-react";
 import Partner from "../components/Partner";
 
@@ -170,6 +171,7 @@ export default function LandingPage(){
 
                         </div>
                     </section>
+            <Footer/>
             </main>
         </>
     )

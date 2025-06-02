@@ -1,5 +1,6 @@
 import { Search, ShoppingCart } from "lucide-react";
 import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 
 export default function Marketplace(){
     const objek = [
@@ -84,7 +85,7 @@ export default function Marketplace(){
                                 </svg>
                                 <input type="text" className="flex-grow outline-none rounded-full bg-white text-slate-600 py-1" placeholder="Search"/>
                             </div>
-                            <p className="text-black">
+                            <p className="text-black hover:bg-slate-300 p-2 rounded-full">
                                 <ShoppingCart />
                             </p>
                         </div>
@@ -118,6 +119,7 @@ export default function Marketplace(){
                     )}
                 </section>
 
+            <Footer/>
             </main>
         
         </>

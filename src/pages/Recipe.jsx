@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import { ArrowRightIcon } from "lucide-react";
+import Footer from "../components/Footer";
 
 export default function Recipe(){
     return(
@@ -43,8 +44,8 @@ export default function Recipe(){
                     <p className="text-slate-800 text-2xl font-bold">Popular Category</p>
                     <div className="flex justify-center gap-40 mt-8">
                         {[1,2,3,4].map((x) => (
-                            <div key={x} className="flex flex-col gap-3 items-center">
-                                <img src="../assets/tofu.jpg" className="w-72 rounded-full border shadow-lg" alt="" />
+                            <div key={x} className="flex flex-col gap-3 items-center cursor-pointer" >
+                                <img src="../assets/tofu.jpg" className="w-72 object-cover rounded-full border shadow-lg" alt="" />
                                 <p className="text-slate-800">Dessert</p>
                             </div>
                         ))}
@@ -82,6 +83,7 @@ export default function Recipe(){
                             ))}
                         </div>
                 </section>
+            <Footer/>
             </main>
             
             

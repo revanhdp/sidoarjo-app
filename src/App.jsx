@@ -11,6 +11,8 @@ import Login from './pages/auth/Login'
 import DetailArticle from './pages/ArticleDetail'
 import Register from './pages/auth/Register'
 import Profile from './pages/user/Profile'
+import Favorite from './pages/user/Favorite'
+import RecipeDetail from './pages/RecipeDetail'
 
 
 function App() {
@@ -27,6 +29,8 @@ function App() {
         <Route path='/article' element={<Article/>}/>
         <Route path='/marketplace' element={<Marketplace/>} />
         <Route path='/profile' element={<Profile/>} />
+        <Route path='/favorite' element={<Favorite/>} />
+        <Route path='/detail-recipe' element={<RecipeDetail/>} />
       </Routes>
     </BrowserRouter>
     </>
