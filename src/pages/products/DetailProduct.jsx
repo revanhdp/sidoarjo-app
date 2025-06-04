@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Navbar from "../components/Navbar";
+import Navbar from "../../components/Navbar";
 import { ShoppingCartIcon } from "lucide-react";
 
 export default function DetailProduct(){

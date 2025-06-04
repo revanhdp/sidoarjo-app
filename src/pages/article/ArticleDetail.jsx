@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
-import Navbar from "../components/Navbar";
+import Navbar from "../../components/Navbar";
 import { Send } from "lucide-react";
-import Footer from "../components/Footer";
+import Footer from "../../components/Footer";
 
 export default function DetailArticle(){
     return(

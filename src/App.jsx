@@ -1,18 +1,20 @@
 import { useState } from 'react'
 import './App.css'
-import LandingPage from './pages/LandingPage'
+import LandingPage from './pages/home/LandingPage'
 import { BrowserRouter as Router, Routes, Route, BrowserRouter } from 'react-router-dom';
-import Recipe from './pages/Recipe'
-import Marketplace from './pages/Marketplace'
-import Article from './pages/Article'
+import Recipe from './pages/recipe/Recipe'
+import Marketplace from './pages/products/Marketplace'
+import Article from './pages/article/Article'
 import Login from './pages/auth/Login'
-import DetailArticle from './pages/ArticleDetail'
+import DetailArticle from './pages/article/ArticleDetail'
 import Register from './pages/auth/Register'
 import Profile from './pages/user/Profile'
 import Favorite from './pages/user/Favorite'
-import RecipeDetail from './pages/RecipeDetail'
-import RecipeCategories from './pages/RecipeCategories'
-import DetailProduct from './pages/DetailProduct';
+import RecipeDetail from './pages/recipe/RecipeDetail'
+import RecipeCategories from './pages/recipe/RecipeCategories'
+import DetailProduct from './pages/products/DetailProduct';
+import AddProduct from './pages/admin/AddProduct';
+import ProductManager from './pages/admin/ProductManager';
 
 
 function App() {
@@ -33,6 +35,8 @@ function App() {
         <Route path='/detail-recipe' element={<RecipeDetail/>} />
         <Route path='/recipe-categories' element={<RecipeCategories/>} />
         <Route path='/detail-product' element={<DetailProduct/>} />
+        <Route path='/admin/add-product' element={<AddProduct/>} />
+        <Route path='/admin/product-manager' element={<ProductManager/>} />
       </Routes>
     </BrowserRouter>
     </>
