@@ -1,7 +1,11 @@
+import { useNavigate } from "react-router-dom";
 import Footer from "../../components/Footer";
 import Navbar from "../../components/Navbar";
 
 export default function RecipeCategories(){
+
+    const navigate = useNavigate();
+
     return(
         <>
             <Navbar/>
@@ -44,7 +48,8 @@ export default function RecipeCategories(){
                         {[1,2,3,4,5,6,7].map((rcp) => (
                         <div
                         key={rcp}
-                        className="w-full sm:w-[48%] lg:w-[30%] bg-white rounded-md shadow-md overflow-hidden"
+                        className="w-full sm:w-[48%] lg:w-[30%] bg-white rounded-md shadow-md overflow-hidden cursor-pointer"
+                        onClick={() => navigate('/detail-recipe')}
                         >
                             <div className="h-48 w-full overflow-hidden">
                                 <img

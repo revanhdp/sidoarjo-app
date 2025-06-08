@@ -15,6 +15,9 @@ import RecipeCategories from './pages/recipe/RecipeCategories'
 import DetailProduct from './pages/products/DetailProduct';
 import AddProduct from './pages/admin/AddProduct';
 import ProductManager from './pages/admin/ProductManager';
+import Checkout from './pages/payment/Checkout';
+import Payment from './pages/payment/Payment';
+import AddArticle from './pages/admin/AddArticle';
 
 
 function App() {
@@ -35,7 +38,10 @@ function App() {
         <Route path='/detail-recipe' element={<RecipeDetail/>} />
         <Route path='/recipe-categories' element={<RecipeCategories/>} />
         <Route path='/detail-product' element={<DetailProduct/>} />
+        <Route path='/checkout' element={<Checkout/>} />
+        <Route path='/payment' element={<Payment/>} />
         <Route path='/admin/add-product' element={<AddProduct/>} />
+        <Route path='/admin/add-article' element={<AddArticle/>} />
         <Route path='/admin/product-manager' element={<ProductManager/>} />
       </Routes>
     </BrowserRouter>

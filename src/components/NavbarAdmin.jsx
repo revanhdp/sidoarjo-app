@@ -7,17 +7,17 @@ export default function NavbarAdmin(){
         <nav className="container mx-auto">
             <ul className="sm:flex justify-evenly gap-4 p-3 hidden flex-wrap">
                 <li>
-                    <NavLink className='text-black flex gap-1 items-center rounded-full hover:bg-[#D9D9D9] hover:text-black py-1 px-3'>
+                    <NavLink to="/admin/add-product" className='text-black flex gap-1 items-center rounded-full hover:bg-[#D9D9D9] hover:text-black py-1 px-3'>
                         <Plus/> Add Product
                     </NavLink>
                 </li>
                 <li>
-                    <NavLink className='text-black flex gap-1 items-center rounded-full hover:bg-[#D9D9D9] hover:text-black py-1 px-3'>
+                    <NavLink to="/admin/product-manager" className='text-black flex gap-1 items-center rounded-full hover:bg-[#D9D9D9] hover:text-black py-1 px-3'>
                         <Edit/> Product Manager
                     </NavLink>
                 </li>
                 <li>
-                    <NavLink className='text-black flex gap-1 items-center rounded-full hover:bg-[#D9D9D9] hover:text-black py-1 px-3'>
+                    <NavLink to="/admin/add-article" className='text-black flex gap-1 items-center rounded-full hover:bg-[#D9D9D9] hover:text-black py-1 px-3'>
                         <Plus/> Add Article
                     </NavLink>
                 </li>

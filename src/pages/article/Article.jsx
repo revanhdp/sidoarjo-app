@@ -1,7 +1,11 @@
+import { useNavigate } from "react-router-dom";
 import Footer from "../../components/Footer";
 import Navbar from "../../components/Navbar";
 
 export default function Article(){
+
+    const navigate = useNavigate();
+
     return(
         <>
             <Navbar/>
@@ -50,7 +54,7 @@ export default function Article(){
                 {/* card Article */}
                 <section className="flex gap-9 flex-wrap container mx-auto w-full mt-10  justify-center items-center ">
                     {[1,2,3,4,5,6].map((card) => (
-                        <div className="flex flex-col rounded-sm w-96 shadow-lg bg-white">
+                        <div className="flex flex-col rounded-sm w-96 cursor-pointer shadow-lg bg-white" onClick={() => navigate('/detail-article')}>
                             <div className="h-1/2 bg-red-600">
                                 <img src="../public/assets/batik.jpg" className="" alt="" />
                             </div>
