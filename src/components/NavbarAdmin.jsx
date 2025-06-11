@@ -22,12 +22,12 @@ export default function NavbarAdmin(){
                     </NavLink>
                 </li>
                 <li>
-                    <NavLink className='text-black flex gap-1 items-center rounded-full hover:bg-[#D9D9D9] hover:text-black py-1 px-3'>
+                    <NavLink to="/admin/article-manager" className='text-black flex gap-1 items-center rounded-full hover:bg-[#D9D9D9] hover:text-black py-1 px-3'>
                         <Edit/> Article Manager
                     </NavLink>
                 </li>
                 <li>
-                    <NavLink className='text-black flex gap-1 items-center rounded-full hover:bg-[#D9D9D9] hover:text-black py-1 px-3'>
+                    <NavLink to="/admin/add-recipe" className='text-black flex gap-1 items-center rounded-full hover:bg-[#D9D9D9] hover:text-black py-1 px-3'>
                         <Plus/> Add Recipe
                     </NavLink>
                 </li>
@@ -37,7 +37,7 @@ export default function NavbarAdmin(){
                     </NavLink>
                 </li>
                 <li>
-                    <NavLink className='text-black flex gap-1 items-center rounded-full hover:bg-[#D9D9D9] hover:text-black py-1 px-3'>
+                    <NavLink to="/admin/profile" className='text-black flex gap-1 items-center rounded-full hover:bg-[#D9D9D9] hover:text-black py-1 px-3'>
                         <User/> Admin Profile
                     </NavLink>
                 </li>

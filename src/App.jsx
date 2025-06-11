@@ -18,6 +18,10 @@ import ProductManager from './pages/admin/ProductManager';
 import Checkout from './pages/payment/Checkout';
 import Payment from './pages/payment/Payment';
 import AddArticle from './pages/admin/AddArticle';
+import ArticleManager from './pages/admin/ArticleManager';
+import AdminProfile from './pages/admin/AdminProfile';
+import AddRecipe from './pages/admin/AddRecipe';
+import MyOrder from './pages/user/MyOrder';
 
 
 function App() {
@@ -35,6 +39,7 @@ function App() {
         <Route path='/marketplace' element={<Marketplace/>} />
         <Route path='/profile' element={<Profile/>} />
         <Route path='/favorite' element={<Favorite/>} />
+        <Route path='/my-order' element={<MyOrder/>} />
         <Route path='/detail-recipe' element={<RecipeDetail/>} />
         <Route path='/recipe-categories' element={<RecipeCategories/>} />
         <Route path='/detail-product' element={<DetailProduct/>} />
@@ -42,7 +47,10 @@ function App() {
         <Route path='/payment' element={<Payment/>} />
         <Route path='/admin/add-product' element={<AddProduct/>} />
         <Route path='/admin/add-article' element={<AddArticle/>} />
+        <Route path='/admin/add-recipe' element={<AddRecipe/>} />
         <Route path='/admin/product-manager' element={<ProductManager/>} />
+        <Route path='/admin/article-manager' element={<ArticleManager/>} />
+        <Route path='/admin/profile' element={<AdminProfile/>} />
       </Routes>
     </BrowserRouter>
     </>
