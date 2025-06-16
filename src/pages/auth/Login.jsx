@@ -11,40 +11,39 @@ export default function Login(){
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        if(!email || !password) {
+        if (!email || !password) {
             alert("Email dan Password harus diisi");
-            return
+            return;
         }
 
         setLoading(true);
 
         try {
-            const response = await fetch("http://localhost:5000/login", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                },
-                body: JSON.stringify({email, password}),
-                credentials: "include",
+            const response = await fetch("http://localhost:3000/auth/login", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ email, password }),
+            credentials: "include", // penting untuk cookie
             });
 
             const data = await response.json();
 
-            if(response.ok){
-                alert("Login Berhasil")
-                localStorage.setItem("accessToken", data.accessToken);
-                navigate("/")
+            if (response.ok) {
+            alert("Login Berhasil");
+            // Jangan simpan token di localStorage karena sudah di cookie
+            navigate("/"); // arahkan ke halaman utama
             } else {
-                alert(data.msg || "Login gagal")
+            alert(data.message || "Login gagal");
             }
-
         } catch (error) {
-            alert("Terjadi Kesalahan")
+            alert("Terjadi Kesalahan");
             console.error("Login error: ", error);
         } finally {
             setLoading(false);
         }
-    }
+        };
 
     return(
         <>

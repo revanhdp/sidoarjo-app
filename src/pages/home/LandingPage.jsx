@@ -55,7 +55,7 @@ export default function LandingPage(){
                     <CardReccomended/>
 
                     {/* Section 4 - Products */}
-                    <section className="container mx-auto mt-16">
+                    {/* <section className="container mx-auto mt-16">
                         <div className="flex flex-col gap-4">
                             <p className="text-slate-700 text-2xl font-semibold">Products</p>
                             <p className="text-slate-700">Find the Popular Product</p>
@@ -74,10 +74,10 @@ export default function LandingPage(){
                                 </div>
                             ))}
                         </div>
-                    </section>
+                    </section> */}
 
                     {/* Section 5 - Partner */}
-                    <Partner/>
+                    {/* <Partner/> */}
 
 
                     {/* Section 6 - Testimonial */}

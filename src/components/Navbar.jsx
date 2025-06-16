@@ -5,30 +5,41 @@ import { useLocation, Link, NavLink } from "react-router-dom";
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [isOpens, setIsOpens] = useState(false);
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [user, setUser] = useState(null);
   const location = useLocation();
 
-  // Cek token saat komponen mount untuk menentukan status login
   useEffect(() => {
-    const token = localStorage.getItem("accessToken");
-    setIsLoggedIn(!!token);
+    const fetchUser = async () => {
+      try {
+        const res = await fetch("http://localhost:3000/auth/me", {
+          method: "GET",
+          credentials: "include",
+        });
+        if (res.ok){
+          const data = await res.json();
+          setUser(data);
+        } else {
+          setUser(null)
+        }
+      } catch (error) {
+        console.error("Gagal mengambil data user:", error)
+        setUser(null);
+      }
+    };
+    fetchUser();
   }, []);
 
   // Fungsi logout
   const handleLogout = async () => {
     try {
-      const response = await fetch("http://localhost:5000/logout", {
+      const response = await fetch("http://localhost:3000/auth/logout", {
         method: "DELETE",
-        credentials: "include", // penting agar cookie refreshToken dikirim
+        credentials: "include", 
       });
 
       if (response.ok) {
-        // Hapus token dan update state
-        localStorage.removeItem("accessToken");
-        // localStorage.removeItem("username"); // jika ada
-        setIsLoggedIn(false);
-        alert("Logout berhasil");
-        // Redirect ke halaman utama atau login
+        setUser(null);
+        alert("Logout Berhasil");
         window.location.href = "/";
       } else {
         alert("Logout gagal");
@@ -112,7 +123,7 @@ export default function Navbar() {
 
         {/* Right */}
         <div className="relative order-3">
-          {isLoggedIn ? (
+          {user ? (
             <>
               {/* Profile */}
               <div
@@ -126,7 +137,7 @@ export default function Navbar() {
                 />
 
                 <button className="hidden md:flex items-center text-white text-lg font-medium gap-1 bg-transparent px-1">
-                  Hello, User
+                  Hello, {user.first_name}
                   {isOpens ? <ChevronUp size={18} /> : <ChevronDown size={18} />}
                 </button>
               </div>

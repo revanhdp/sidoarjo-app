@@ -1,13 +1,13 @@
 import NavbarAdmin from "../../components/NavbarAdmin";
 
-export default function ArticleManager(){
+export default function RecipeManager(){
     return(
         <>
             <NavbarAdmin/>
             <main className="bg-[#F0F0F0] min-h-screen">
                 <div className="container mx-auto pt-10 flex flex-col ">
                     <section className=" bg-white text-slate-700 rounded-lg mt-6 mb-6">
-                        <p className="p-6 border-b-2 border-slate-200">Article Manager</p>
+                        <p className="p-6 border-b-2 border-slate-200">Recipe Manager</p>
                         <div className="flex justify-between p-4 items-center ">
                             <select className="bg-transparent border p-2 rounded-full px-4">
                                 <option disabled selected>Sort By</option>
@@ -35,10 +35,10 @@ export default function ArticleManager(){
                                     </div>
                                     <div className="flex items-center gap-3">
                                         <img src="../public/assets/batik.jpg" className="w-14 h-14 rounded-full object-cover" alt="" />
-                                        <p>Blouse Batik Kombinasi</p>
+                                        <p>Tahu Campur</p>
                                     </div>
                                     <p>1/12/25 at 3.00 PM</p>
-                                    <p>Batik</p>
+                                    <p>Appatizer</p>
                                     <button className="text-white bg-[#5347F3] border border-slate-300 w-fit p-1 px-4 rounded">Edit</button>
                                 </div>
                             ))}

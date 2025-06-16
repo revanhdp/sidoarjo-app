@@ -2,10 +2,20 @@ import { Link, useNavigate } from "react-router-dom";
 import Navbar from "../../components/Navbar";
 import { ArrowRightIcon } from "lucide-react";
 import Footer from "../../components/Footer";
+import { useState } from "react";
+import { useEffect } from "react";
+import axios from "axios";
 
 export default function Recipe(){
 
     const navigate = useNavigate()
+    const [categories, setCategories] = useState([]);
+
+    useEffect(() => {
+        axios.get("http://localhost:3000/recipe/categories")
+            .then((res) => setCategories(res.data))
+            .catch((err) => console.error("Failed to fetch categories:", err));
+    }, []);
 
     return(
         <>
@@ -46,10 +56,14 @@ export default function Recipe(){
                 <section className="container mx-auto w-full mt-20">
                     <p className="text-slate-800 text-2xl font-bold">Popular Category</p>
                     <div className="flex justify-center gap-40 mt-8">
-                        {[1,2,3,4].map((x) => (
-                            <div key={x} className="flex flex-col gap-3 items-center cursor-pointer " onClick={() => navigate('/recipe-categories')} >
-                                <img src="../assets/tofu.jpg" className="w-72 object-cover rounded-full border shadow-lg" alt="" />
-                                <p className="text-slate-800">Dessert</p>
+                        {categories.map((cat) => (
+                            <div 
+                                key={cat} 
+                                className="flex flex-col gap-3 items-center cursor-pointer" 
+                                onClick={() => navigate(`/recipe-categories?category_id=${cat.id}`)}
+                            >
+                                <img src={cat.img_url} className="w-72 object-cover rounded-full border shadow-lg" alt="" />
+                                <p className="text-slate-800">{cat.name}</p>
                             </div>
                         ))}
 

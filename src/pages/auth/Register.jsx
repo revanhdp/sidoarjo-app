@@ -4,17 +4,16 @@ import { Link, useNavigate } from "react-router-dom";
 export default function Register() {
   const navigate = useNavigate();
 
-  // State untuk menyimpan input form
+  // ✅ Perbaiki state form
   const [formData, setFormData] = useState({
-    name: "",
+    first_name: "",
+    last_name: "",
     email: "",
     password: "",
   });
 
-  // State untuk menampilkan loading saat submit
   const [isLoading, setIsLoading] = useState(false);
 
-  // Handler untuk update state saat input berubah
   const handleChange = (e) => {
     setFormData({
       ...formData,
@@ -22,12 +21,10 @@ export default function Register() {
     });
   };
 
-  // Handler submit form
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // Validasi sederhana (optional, karena sudah ada required di input)
-    if (!formData.name || !formData.email || !formData.password) {
+    if (!formData.first_name || !formData.email || !formData.password) {
       alert("Semua field harus diisi!");
       return;
     }
@@ -35,7 +32,7 @@ export default function Register() {
     setIsLoading(true);
 
     try {
-      const response = await fetch("http://localhost:5000/users", {
+      const response = await fetch("http://localhost:3000/auth/register", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -46,11 +43,10 @@ export default function Register() {
       const data = await response.json();
 
       if (response.ok) {
-        alert(data.msg || "Register berhasil!");
-        // Redirect ke halaman login setelah berhasil register
+        alert(data.message || "Register berhasil!");
         navigate("/login");
       } else {
-        alert(data.msg || "Register gagal, coba lagi.");
+        alert(data.message || "Register gagal, coba lagi.");
       }
     } catch (error) {
       console.error("Error saat register:", error);
@@ -59,6 +55,7 @@ export default function Register() {
       setIsLoading(false);
     }
   };
+
 
   return (
     <>
@@ -76,20 +73,36 @@ export default function Register() {
             Already have Account? <Link to="/login">Log In Here </Link>
           </p>
           <form className="w-full flex flex-col gap-7" onSubmit={handleSubmit}>
-            <div className="flex flex-col">
-              <label htmlFor="name" className="text-slate-800">
-                Name
-              </label>
-              <input
-                type="text"
-                name="name"
-                id="name"
-                value={formData.name}
-                onChange={handleChange}
-                className="py-2 pl-1 rounded-md bg-white border text-slate-800 border-slate-400"
-                required
-                placeholder="Masukkan nama lengkap"
-              />
+            <div className="flex gap-6">
+              <div className="flex flex-col w-full">
+                <label htmlFor="name" className="text-slate-800">
+                 First Name
+                </label>
+                <input
+                  type="text"
+                  name="first_name"
+                  id="name"
+                  value={formData.first_name}
+                  onChange={handleChange}
+                  className="py-2 pl-1 rounded-md bg-white border w-full text-slate-800 border-slate-400"
+                  required
+                  placeholder="Masukkan nama lengkap"
+                  />
+              </div>
+              <div className="flex flex-col w-full">
+                <label htmlFor="name" className="text-slate-800">
+                 Last Name
+                </label>
+                <input
+                  type="text"
+                  name="last_name"
+                  id="name"
+                  value={formData.last_name}
+                  onChange={handleChange}
+                  className="py-2 pl-1 rounded-md w-full bg-white border text-slate-800 border-slate-400"
+                  placeholder="Masukkan nama lengkap"
+                  />
+              </div>
             </div>
             <div className="flex flex-col">
               <label htmlFor="email" className="text-slate-800">

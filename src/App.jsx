@@ -22,6 +22,9 @@ import ArticleManager from './pages/admin/ArticleManager';
 import AdminProfile from './pages/admin/AdminProfile';
 import AddRecipe from './pages/admin/AddRecipe';
 import MyOrder from './pages/user/MyOrder';
+import RecipeManager from './pages/admin/RecipeManager';
+import axios from 'axios';
+axios.defaults.withCredentials = true;
 
 
 function App() {
@@ -33,7 +36,7 @@ function App() {
         <Route path='/' element={<LandingPage/>} />
         <Route path='/login' element={<Login/>} />
         <Route path='/register' element={<Register/>} />
-        <Route path='/detail-article' element={<DetailArticle/>} />
+        <Route path='/detail-article/:id' element={<DetailArticle/>} />
         <Route path='/recipe' element={<Recipe/>} />
         <Route path='/article' element={<Article/>}/>
         <Route path='/marketplace' element={<Marketplace/>} />
@@ -42,7 +45,7 @@ function App() {
         <Route path='/my-order' element={<MyOrder/>} />
         <Route path='/detail-recipe' element={<RecipeDetail/>} />
         <Route path='/recipe-categories' element={<RecipeCategories/>} />
-        <Route path='/detail-product' element={<DetailProduct/>} />
+        <Route path='/detail-product/:id' element={<DetailProduct/>} />
         <Route path='/checkout' element={<Checkout/>} />
         <Route path='/payment' element={<Payment/>} />
         <Route path='/admin/add-product' element={<AddProduct/>} />
@@ -50,6 +53,7 @@ function App() {
         <Route path='/admin/add-recipe' element={<AddRecipe/>} />
         <Route path='/admin/product-manager' element={<ProductManager/>} />
         <Route path='/admin/article-manager' element={<ArticleManager/>} />
+        <Route path='/admin/recipe-manager' element={<RecipeManager/>} />
         <Route path='/admin/profile' element={<AdminProfile/>} />
       </Routes>
     </BrowserRouter>
