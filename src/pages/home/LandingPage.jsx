@@ -6,16 +6,26 @@ import CardDiscover from "./components/CardDiscover";
 import CardReccomended from "./components/CardReccomended";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import axios from "axios";
 
 export default function LandingPage(){
     const devPic = '../public/assets/bg-home.jpg'
-
-    const [isLogin, setIsLogin] = useState(false)
+    const [isLogin, setIsLogin] = useState(false);
 
     useEffect(() => {
-        const token = localStorage.getItem("accessToken");
-        setIsLogin(!!token);
-    },[])
+        const checkLogin = async () => {
+            try {
+                const res = await axios.get("http://localhost:3000/auth/me", {
+                    withCredentials: true
+                });
+                setIsLogin(true);
+            } catch (err) {
+                setIsLogin(false);
+            }
+        };
+
+        checkLogin();
+    }, []);
 
     return(
         <>
@@ -37,13 +47,16 @@ export default function LandingPage(){
                             wisdom.
                             A lifestyle that honors your body, your roots, and the Earth.
                             </p>
-                            {isLogin ? 
-                               "" : 
+                            {!isLogin && (
                                 <div className="flex flex-col gap-5">
-                                    <Link to="/register" className="w-fit bg-[#0C4834] text-white rounded-md self-center md:self-start py-2 px-6 hover:bg-[#0a3d2c] hover:text-white transition">Sign Up</Link> 
-                                    <p className="text-slate-900 text-xs md:text-sm font-light">By clicking Sign Up you're confirming that you agree with our <span className="underline">Terms and Conditions.</span></p>
+                                    <Link to="/register" className="w-fit bg-[#0C4834] text-white rounded-md self-center md:self-start py-2 px-6 hover:bg-[#0a3d2c] hover:text-white transition">
+                                        Sign Up
+                                    </Link>
+                                    <p className="text-slate-900 text-xs md:text-sm font-light">
+                                        By clicking Sign Up you're confirming that you agree with our <span className="underline">Terms and Conditions.</span>
+                                    </p>
                                 </div>
-                            }                            
+                            )}                            
                         </div>
                     </div>
 

@@ -13,7 +13,7 @@ export default function MyOrder() {
     const fetchOrders = async () => {
       try {
         const res = await axios.get("http://localhost:3000/api/orders/my-orders", {
-          withCredentials: true, // penting agar cookie dikirim
+          withCredentials: true, 
         });
         setOrders(res.data);
       } catch (err) {
@@ -29,6 +29,11 @@ export default function MyOrder() {
   const getStatusStyle = (status) => {
     switch (status) {
       case "accepted":
+      case "processing":
+        return "bg-blue-200 text-blue-800 border-blue-400";
+      case "delivered":
+        return "bg-purple-200 text-purple-800 border-purple-400";
+      case "completed":
         return "bg-green-200 text-green-800 border-green-400";
       case "pending":
         return "bg-yellow-200 text-yellow-800 border-yellow-400";
@@ -38,6 +43,8 @@ export default function MyOrder() {
         return "bg-gray-200 text-gray-800 border-gray-400";
     }
   };
+
+
 
   return (
     <>
@@ -66,9 +73,19 @@ export default function MyOrder() {
                   <p className="text-slate-700 mt-10">You don’t have any orders yet.</p>
                 ) : (
                   orders.map((order) => {
-                    const status = order.payments?.[0]?.payment_status || "No Payment";
-                    const badgeStyle = getStatusStyle(status);
+                    const paymentStatus = order.payments?.[0]?.payment_status || "No Payment";
+                    const orderStatus = order.status;
 
+                    const getDisplayedStatus = () => {
+                      if (paymentStatus === "accepted") {
+                        return orderStatus;
+                      } else {
+                        return paymentStatus;
+                      }
+                    };
+
+                    const status = getDisplayedStatus();
+                    const badgeStyle = getStatusStyle(status);
                     return (
                       <div key={order.id} className="p-4 pl-8 mt-5 border border-slate-300 rounded-lg gap-3 relative">
                         <p className="text-slate-700">{new Date(order.createdAt).toLocaleDateString("id-ID")}</p>
@@ -87,7 +104,7 @@ export default function MyOrder() {
                               <p className="text-slate-700 font-semibold">{item.product?.name}</p>
                               <div className="text-slate-700">
                                 <p className="text-xs">Total Price:</p>
-                                <p>Rp{item.total_price?.toLocaleString()}</p>
+                                <p>Rp{order.total_price?.toLocaleString()}</p>
                               </div>
                             </div>
                             <button

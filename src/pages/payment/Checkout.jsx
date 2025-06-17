@@ -89,7 +89,6 @@ export default function Checkout(){
                 shipping_cost: deliveryFee,
                 service_name: "Service Fee",
                 service_cost: serviceFee
-                // user_id DIHAPUS - backend akan handle ini
             };
             
             console.log('Creating order with data:', orderData);
@@ -147,13 +146,6 @@ export default function Checkout(){
         } catch (error) {
             console.error("Detailed error:", error);
             
-            // Handle authentication errors
-            // if (error.response?.status === 401) {
-            //     alert("Session expired. Please login again.");
-            //     navigate("/login");
-            //     return;
-            // }
-            
             // Log detail error untuk debugging
             if (error.response) {
                 console.error("Error response data:", error.response.data);
@@ -166,9 +158,9 @@ export default function Checkout(){
     };
 
     const deliveryOptions = [
-        { id: 1, name: "JNT Express Delivery", price: 20000, eta: "Friday, 21th 2025" },
-        { id: 2, name: "JNE Regular", price: 15000, eta: "Saturday, 22th 2025" },
-        { id: 3, name: "Sicepat Express", price: 18000, eta: "Friday, 21th 2025" }
+        { id: 1, name: "JNT Express Delivery", price: 20000, eta: "2 Days", img_url: "public/assets/logo_jnt.jpg" },
+        { id: 2, name: "JNE Regular", price: 15000, eta: "2 Days", img_url: "public/assets/jne.png" },
+        { id: 3, name: "Sicepat Express", price: 18000, eta: "3 Days", img_url: "public/assets/sicepat.jpeg" }
     ];
 
     const paymentMethodsByType = {
@@ -298,7 +290,7 @@ export default function Checkout(){
                                     }`}
                                 >
                                     <div className="flex gap-5">
-                                        <img src="public/assets/jne.png" className="w-20 h-20 object-cover" alt="" />
+                                        <img src={delivery.img_url} className="w-20 h-20 object-cover" alt="" />
                                         <div className="flex flex-col">
                                             <p className="font-semibold mb-2">{delivery.name}</p>
                                             <p>Expected:</p>

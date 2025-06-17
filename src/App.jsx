@@ -24,6 +24,7 @@ import AddRecipe from './pages/admin/AddRecipe';
 import MyOrder from './pages/user/MyOrder';
 import RecipeManager from './pages/admin/RecipeManager';
 import axios from 'axios';
+import PaymentManager from './pages/admin/PaymentManager';
 axios.defaults.withCredentials = true;
 
 
@@ -52,6 +53,7 @@ function App() {
         <Route path='/admin/add-article' element={<AddArticle/>} />
         <Route path='/admin/add-recipe' element={<AddRecipe/>} />
         <Route path='/admin/product-manager' element={<ProductManager/>} />
+        <Route path='/admin/payment-manager' element={<PaymentManager/>} />
         <Route path='/admin/article-manager' element={<ArticleManager/>} />
         <Route path='/admin/recipe-manager' element={<RecipeManager/>} />
         <Route path='/admin/profile' element={<AdminProfile/>} />

@@ -8,6 +8,11 @@ export default function NavbarAdmin(){
         <nav className="container mx-auto">
             <ul className="sm:flex justify-evenly gap-4 p-3 hidden flex-wrap">
                 <li>
+                    <NavLink to="/admin/payment-manager" className={`text-black flex gap-1 items-center rounded-full ${location.pathname === '/admin/recipe-manager' ? 'bg-[#D9D9D9]' : ""} hover:bg-[#D9D9D9] hover:text-black py-1 px-3`}>
+                        <Edit/> Order Manager
+                    </NavLink>
+                </li>
+                <li>
                     <NavLink to="/admin/add-product" className={`text-black flex gap-1 items-center rounded-full ${location.pathname === '/admin/add-product' ? 'bg-[#D9D9D9]' : ""} hover:bg-[#D9D9D9] hover:text-black py-1 px-3`}>
                         <Plus/> Add Product
                     </NavLink>
@@ -37,11 +42,12 @@ export default function NavbarAdmin(){
                         <Edit/> Recipe Manager
                     </NavLink>
                 </li>
-                <li>
+
+                {/* <li>
                     <NavLink to="/admin/profile" className={`text-black flex gap-1 items-center rounded-full ${location.pathname === '/admin/profile' ? 'bg-[#D9D9D9]' : ""} hover:bg-[#D9D9D9] hover:text-black py-1 px-3`}>
                         <User/> Admin Profile
                     </NavLink>
-                </li>
+                </li> */}
             </ul>
         
         </nav>

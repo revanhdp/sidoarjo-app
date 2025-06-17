@@ -226,7 +226,7 @@ useEffect(() => {
                     <div className="flex flex-col w-1/4">
                       <p className="flex flex-col items-center px-8">
                         <ChefHat size={50} /> Porsi{" "}
-                        <span className="text-slate-400">{recipe.serving}</span>
+                        <span className="text-slate-400">1</span>
                       </p>
                     </div>
                   </div>
