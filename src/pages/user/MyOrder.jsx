@@ -26,23 +26,32 @@ export default function MyOrder() {
     fetchOrders();
   }, []);
 
-  const getStatusStyle = (status) => {
-    switch (status) {
-      case "accepted":
-      case "processing":
-        return "bg-blue-200 text-blue-800 border-blue-400";
-      case "delivered":
-        return "bg-purple-200 text-purple-800 border-purple-400";
-      case "completed":
-        return "bg-green-200 text-green-800 border-green-400";
-      case "pending":
-        return "bg-yellow-200 text-yellow-800 border-yellow-400";
-      case "rejected":
-        return "bg-red-200 text-red-800 border-red-400";
-      default:
-        return "bg-gray-200 text-gray-800 border-gray-400";
-    }
-  };
+const getStatusStyle = (status) => {
+  switch (status) {
+    case "accepted":
+    case "processing":
+      // Biru untuk status sedang berjalan/diproses
+      return "bg-blue-100 text-blue-700 border border-blue-300 rounded-md px-2 py-1 text-sm font-medium";
+    case "shipped":
+      // Hijau terang untuk status dalam pengiriman
+      return "bg-teal-100 text-teal-700 border border-teal-300 rounded-md px-2 py-1 text-sm font-medium";
+    case "delivered":
+      // Ungu untuk status berhasil diantar
+      return "bg-purple-100 text-purple-700 border border-purple-300 rounded-md px-2 py-1 text-sm font-medium";
+    case "completed":
+      // Hijau gelap untuk status selesai/sukses penuh
+      return "bg-green-100 text-green-700 border border-green-300 rounded-md px-2 py-1 text-sm font-medium";
+    case "pending":
+      // Kuning/Oranye untuk status menunggu/perlu perhatian
+      return "bg-yellow-100 text-yellow-700 border border-yellow-300 rounded-md px-2 py-1 text-sm font-medium";
+    case "rejected":
+      // Merah untuk status ditolak/gagal
+      return "bg-red-100 text-red-700 border border-red-300 rounded-md px-2 py-1 text-sm font-medium";
+    default:
+      // Abu-abu netral untuk status yang tidak dikenal
+      return "bg-gray-100 text-gray-700 border border-gray-300 rounded-md px-2 py-1 text-sm font-medium";
+  }
+};
 
 
 

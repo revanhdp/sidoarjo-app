@@ -5,6 +5,7 @@ import { useLocation } from "react-router-dom";
 import { useState } from "react";
 import { useEffect } from "react";
 import axios from "axios";
+import ReactMarkdown from "react-markdown"
 
 // Include cookies
 axios.defaults.withCredentials = true;
@@ -162,7 +163,7 @@ useEffect(() => {
                 <div>
                   <img
                     src={recipe.img_url}
-                    className="w-full h-[500px] object-cover"
+                    className="w-full h-[600px] object-cover"
                     alt={recipe.title}
                   />
                 </div>
@@ -233,7 +234,12 @@ useEffect(() => {
 
                   <div className="mb-10">
                     <h2 className="font-semibold text-2xl">How To Make</h2>
-                    <p className="text-slate-700">{recipe.how_to_make}</p>
+                    <div className="prose">
+                      <ReactMarkdown>
+                        {recipe.how_to_make}
+                      </ReactMarkdown>
+                    </div>
+                    <p className="text-slate-700"></p>
                   </div>
 
                   {/* Review Section */}
@@ -342,7 +348,7 @@ useEffect(() => {
                         key={item.id}
                         className="flex gap-5 hover:bg-slate-100 cursor-pointer"
                         onClick={() =>
-                          (window.location.href = `/recipe/detail?id=${item.id}`)
+                          (window.location.href = `/detail-recipe?id=${item.id}`)
                         }
                       >
                         <div className="w-1/2">

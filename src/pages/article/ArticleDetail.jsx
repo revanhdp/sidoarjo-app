@@ -4,6 +4,7 @@ import axios from "axios";
 import Navbar from "../../components/Navbar";
 import { Send } from "lucide-react";
 import Footer from "../../components/Footer";
+import ReactMarkdown from "react-markdown";
 
 export default function DetailArticle() {
   const { id } = useParams(); // Ambil ID dari URL
@@ -25,6 +26,8 @@ export default function DetailArticle() {
   if (!article) {
     return <p className="text-center pt-24">Loading...</p>;
   }
+  console.log("Isi data_article:", article.data_article);
+  console.log("Tipe:", typeof article.data_article);
 
   return (
     <>
@@ -68,10 +71,12 @@ export default function DetailArticle() {
             </div>
 
             {/* Content */}
-            <div className="flex w-full gap-5">
+            <div className="flex w-full gap-5 justify-between">
               {/* Left Section */}
-              <div className="mt-5 w-3/4">
-                <p className="text-slate-600">{article.data_article}</p>
+              <div className="prose max-w-none text-slate-600 mt-5">
+                <ReactMarkdown>
+                  {article.data_article}
+                </ReactMarkdown>
               </div>
 
               {/* Right Section */}

@@ -87,8 +87,9 @@ export default function PaymentManager() {
                     className="border rounded px-2 py-1 bg-slate-200"
                 >
                     <option value="processing">Processing</option>
+                    <option value="shipped">Shipped</option>
                     <option value="delivered">Delivered</option>
-                    <option value="done">Done</option>
+                    <option value="completed">Completed</option>
                 </select>
                 <p>{new Date(order.createdAt).toLocaleDateString()}</p>
                 <p>{order.shipping_method}</p>
